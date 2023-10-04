@@ -5,8 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // backgroundImage: {
+      //   'lion-animate': "url('/animation/animation.gif')",
+      // }
+    },
     screens: {
+      'button0' : '300px',
       'button1' : '320px',
       'button2' : '360px',
       'button3' : '400px',

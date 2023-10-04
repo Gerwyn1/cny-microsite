@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
+  background-color: #FFE5BF;
 }
 
 .logo {
@@ -40,10 +41,3 @@
 .read-the-docs {
   color: #888;
 }
-
-/* @media (max-width: 470px) {
-  .animate-button {
-    position:absolute;
-    left: 16%;
-  }
-} */
