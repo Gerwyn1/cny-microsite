@@ -3,7 +3,7 @@
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
-  background-color: #FFE5BF;
+  background-color: #ffe5bf;
 }
 
 .logo {
@@ -40,4 +40,20 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+
+@media (min-width: 420px) {
+  .w-text-2xl {
+    font-size: 1.5rem /* 24px */;
+    line-height: 2rem /* 32px */;
+  }
+}
+
+@media (max-height: 600px and mix-width:420px) {
+  .h-text-2xl {
+    font-size: 1rem/* 24px */;
+    line-height: 1.5rem /* 32px */;
+  }
 }

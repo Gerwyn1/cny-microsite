@@ -13,7 +13,9 @@ export default {
     screens: {
       'button0' : '300px',
       'button1' : '320px',
+      'button1.1': '340px',
       'button2' : '360px',
+      'button2.1' : '380px',
       'button3' : '400px',
       'button3.1' : '420px',
       'button4' : '440px',
