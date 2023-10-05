@@ -25,13 +25,17 @@ function App() {
     console.log("start");
     return (
       <div className={`m-auto relative p-2 `}>
-        <img src="/images/lion-cny.webp" alt="lion scroll" />
+        <img
+          className="button3.1:max-h-[80vh]"
+          src="/images/lion-cny.webp"
+          alt="lion scroll"
+        />
         <img
           className="absolute w-1/2 top-[50.5%] left-1/4"
           src="/images/rc_logo.png"
           alt="cruise"
         />
-        <p className="text-white text-lg button2:text-3xl sm:text-5xl leading-12 italic absolute w-[65%] top-[60.5%] left-[16.5%]">
+        <p className="w-[70%] button0:w-[75%] button2:w-[65%] text-xl button1:text-2xl top-[63.5%] left-[15.5%] button0:left-[13%] button0:top-[63.5%]  button2:text-3xl  leading-12 italic absolute  button0:text-2xl button1:top-[62.5%] button2:top-[60%] button3.1:top-[60%] text-white button2:left-[19%] button3:top-[61%] button3.1:text-3xl button3.1:w-[60%] button3.1:left-[20%]">
           Are you ready for an abundant new year filled with good luck?
         </p>
         <button
@@ -44,7 +48,15 @@ function App() {
               setRandomNumber(() => generateRandomNumber());
             }, 5000);
           }}
-          className="left-[29.5%] button0:left-[31%] px-8 rounded-full button1:top-[85%] text-xs button1:text-sm button2:text-2xl  sm:text-5xl text-bold absolute top-[80.5%]  sm:left-[18%] py-2 button1:px-16 text-white bg-[#0171B8] focus:outline-0 button4:left-[27%] button3:left-[20%] button2:left-[18%] button1:left-[22%]"
+          className="top-[81.5%]
+          
+          left-[24%] button0:left-[26%]
+                                  
+          
+          
+          py-1 px-10 text-base button1:text-lg  button1:left-[27%] button1:top-[81%] button1:px-10
+          shadow-xl
+             rounded-full  button2:text-2xl text-bold absolute  text-white bg-[#0171B8] focus:outline-0  button3:left-[28%] button3.1:left-[25%] button2:left-[25%] text-bold "
         >
           HUAT AH
         </button>
@@ -58,13 +70,8 @@ function App() {
     return (
       <div className="bg-[#FFE5BF] mx-6">
         <img
-          className="max-h-[52rem]"
+          className="xs:max-h-[80vh]"
           src="/animation/lion_dance.webp"
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-          }}
           alt="lion dance"
         />
       </div>
@@ -82,13 +89,8 @@ function App() {
     return (
       <div className="bg-[#FFE5BF] mx-6">
         <img
-          className="max-h-[52rem]"
+          className="xs:max-h-[80vh]"
           src="/end_scene/end_scene.gif"
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-          }}
           alt="lion scroll"
         />
       </div>
@@ -99,16 +101,11 @@ function App() {
   if (staticLionScroll) {
     console.log("render static lion scroll");
     return (
-      <div className="bg-[#FFE5BF]">
+      <div className="bg-[#FFE5BF] mx-6">
         <img
-          className="max-h-[52rem]"
+          className="xs:max-h-[80vh]"
           src="/end_scene/end_scene.png"
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-          }}
-          alt="lion scroll"
+          alt="static lion scroll"
         />
       </div>
     );

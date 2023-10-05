@@ -15,6 +15,7 @@ export default {
       'button1' : '320px',
       'button2' : '360px',
       'button3' : '400px',
+      'button3.1' : '420px',
       'button4' : '440px',
       'xs' : '470px',
       'sm': '525px',
