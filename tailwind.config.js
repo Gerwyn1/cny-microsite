@@ -6,9 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      // backgroundImage: {
-      //   'lion-animate': "url('/animation/animation.gif')",
-      // }
+      backgroundImage: {
+        'lion-cny': "url('/images/lion-cny.webp')",
+      }
     },
     screens: {
       'button0' : '300px',

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   /* max-width: 1280px; */
   margin: 0 auto;
@@ -42,18 +46,22 @@
   color: #888;
 }
 
-
-
-@media (min-width: 420px) {
-  .w-text-2xl {
-    font-size: 1.5rem /* 24px */;
-    line-height: 2rem /* 32px */;
+@layer components {
+  @media (min-width: 420px) {
+    .w-min-420 {
+      @apply text-3xl w-[14.0625rem] left-[19%] top-[60%] !important;
+    },
+    .w-min-420-button {
+      
+    }
   }
-}
 
-@media (max-height: 600px and mix-width:420px) {
-  .h-text-2xl {
-    font-size: 1rem/* 24px */;
-    line-height: 1.5rem /* 32px */;
+  @media (min-width: 420px) and (max-height: 600px) {
+    .h-min-420 {
+      @apply text-xl !important;
+    },
+    .h-min-420-button {
+      
+    }
   }
 }
