@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 #root {
-  /* max-width: 1280px; */
+  max-width: 1280px;
   margin: 0 auto;
-  /* padding: 2rem; */
+  padding: 2rem;
   text-align: center;
   background-color: #ffe5bf;
 }
@@ -46,7 +46,7 @@
   color: #888;
 }
 
-@layer components {
+/* @layer components {
   @media (min-width: 420px) {
     .w-min-420 {
       @apply text-3xl w-[14.0625rem] left-[19%] top-[60%] !important;
@@ -64,4 +64,4 @@
       
     }
   }
-}
+} */

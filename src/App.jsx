@@ -35,34 +35,65 @@ function App() {
   if (!lionDance && !lionScroll) {
     console.log("start");
     return (
-      <div className={`m-auto relative p-2`}>
-        <div className="bg-lion-cny  bg-contain bg-center bg-no-repeat  relative min-h-[700px] 2xl:h-[80vh] flex flex-col">
-          <div className="flex-[4]"></div>
-          <div className="relative flex-1 flex flex-col gap-4">
+      // entire container that expands/contracts if screen adjusted
+      <div className="m-auto 
+       max-w-[286px]
+      button4:max-w-[400px]
+      
+      ">
+
+        <div className="bg-lion-cny  bg-contain bg-center bg-no-repeat min-h-[700px] 2xl:h-[80vh] flex flex-col
+        ">
+
+          {/* push inner content downwards */}
+          <div className="
+          flex-[2] button0:flex-[2.2] button1:flex-[2.7] button4:flex-[4.3]
+          "></div>
+          {/* bottom container */}
+          <div className=" flex-1 flex flex-col 
+          gap-7 button4:gap-10
+          px-7 button4:px-14
+          
+          ">
             <div className="">
+              {/* cruise image */}
               <img
-                className="w-[50%] mx-auto"
+                className="mx-auto 
+                w-[70%] button4:w-[60%]
+                "
                 src="/images/rc_logo.png"
                 alt="cruise"
               />
             </div>
-            <div className="flex flex-col gap-4">
-              <p
-                className="text-white text-center 
-            text-xl 
-            w-1/2 
-            mx-auto
+            {/* container - text & button */}
+            <div className="flex flex-col 
+            gap-2
             
-           
+            
+            ">
+              {/* text */}
+              <p
+                className="text-white text-center
+                text-lg leading-[1.25rem]
+                button1.1:w-[90%]
+                button0:text-xl button0:leading-[1.4rem]
+                button1:text-2xl button1:leading-[1.7rem]
+                button4:text-3xl button4:leading-[2.1rem]
+                mx-auto
+
         "
               >
                 Are you ready for an abundant new year filled with good luck?
               </p>
+              {/* button */}
               <button
                 onClick={() => setLionDance(true)}
-                className="shadow-xl rounded-full text-bold relative text-white bg-[#0171B8] focus:outline-0
-          text-xl
-          w-fit
+                className="shadow-xl rounded-full text-bold  text-white bg-[#0171B8] focus:outline-0
+          text-sm button1:text-base button4:text-2xl
+          
+          py-1
+          px-6 button4:px-8
+          mx-auto
           "
               >
                 HUAT AH
@@ -80,7 +111,7 @@ function App() {
 
     // render gif scroll (gif)
     return (
-      <div className="bg-[#FFE5BF] mx-6 relative">
+      <div className="bg-[#FFE5BF] mx-6">
         <img
           className="xs:max-h-[80vh]"
           src="/end_scene/end_scene.gif"
