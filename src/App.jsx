@@ -35,70 +35,58 @@ function App() {
   if (!lionDance && !lionScroll) {
     console.log("start");
     return (
-      // entire container that expands/contracts if screen adjusted
-      <div className="m-auto 
-       max-w-[286px]
-      button4:max-w-[400px]
-      
-      ">
-
-        <div className="bg-lion-cny  bg-contain bg-center bg-no-repeat min-h-[700px] 2xl:h-[80vh] flex flex-col
-        ">
-
-          {/* push inner content downwards */}
-          <div className="
-          flex-[2] button0:flex-[2.2] button1:flex-[2.7] button4:flex-[4.3]
-          "></div>
-          {/* bottom container */}
-          <div className=" flex-1 flex flex-col 
-          gap-7 button4:gap-10
-          px-7 button4:px-14
-          
-          ">
-            <div className="">
-              {/* cruise image */}
-              <img
-                className="mx-auto 
-                w-[70%] button4:w-[60%]
-                "
-                src="/images/rc_logo.png"
-                alt="cruise"
-              />
-            </div>
-            {/* container - text & button */}
-            <div className="flex flex-col 
-            gap-2
-            
-            
-            ">
-              {/* text */}
-              <p
-                className="text-white text-center
-                text-lg leading-[1.25rem]
-                button1.1:w-[90%]
-                button0:text-xl button0:leading-[1.4rem]
-                button1:text-2xl button1:leading-[1.7rem]
-                button4:text-3xl button4:leading-[2.1rem]
-                mx-auto
-
+      <div
+        className="bg-lion-cny bg-contain bg-center bg-no-repeat 
+    m-auto 
+    max-w-[226px] xs:min-w-[250px] sm:min-w-[430px] md:min-w-[600px]
+    pt-[13.5rem] xs:pt-[14.5rem]  sm:pt-[19rem] md:pt-[22.5rem]
+    pb-[3.5rem] sm:pb-[4rem] md:pb-[5rem]
+    "
+      >
+        {/* container - cruise image & text/button */}
+        <div
+          className="flex flex-col 
+        mx-auto
+        gap-7 xs:gap-6 sm:gap-10
+        w-[90%] xs:w-[70%]
         "
-              >
-                Are you ready for an abundant new year filled with good luck?
-              </p>
-              {/* button */}
-              <button
-                onClick={() => setLionDance(true)}
-                className="shadow-xl rounded-full text-bold  text-white bg-[#0171B8] focus:outline-0
-          text-sm button1:text-base button4:text-2xl
-          
-          py-1
-          px-6 button4:px-8
-          mx-auto
+        >
+          {/* cruise image */}
+          <img
+            src="/images/rc_logo.png"
+            alt="cruise"
+            className="m-auto 
+            w-1/2 xs:w-[60%] sm:w-1/2 md:w-[40%]"
+          />
+          {/* container - text & button */}
+          <div
+            className="flex flex-col 
+            gap-1 sm:gap-2
+            "
+          >
+            {/* text */}
+            <p
+              className="text-white text-center mx-auto
+              w-[70%] leading-[1.2rem]
+              xs:text-lg xs:leading-[1.5rem] xs:w-[80%] 
+              sm:text-2xl sm:leading-[1.8rem] sm:w-[70%]
+              md:text-3xl md:leading-[2.3rem] md:w-[60%]
           "
-              >
-                HUAT AH
-              </button>
-            </div>
+            >
+              Are you ready for an abundant new year filled with good luck?
+            </p>
+            {/* button */}
+            <button
+              onClick={() => setLionDance(true)}
+              className="shadow-xl rounded-full text-bold  text-white bg-[#0171B8] focus:outline-0 mx-auto
+            py-0 sm:py-1
+            px-4  sm:px-9
+           
+            sm:text-xl
+          "
+            >
+              HUAT AH
+            </button>
           </div>
         </div>
       </div>
