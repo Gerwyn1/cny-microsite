@@ -34,12 +34,17 @@ function App() {
   // START
   if (!lionDance && !lionScroll) {
     console.log("start");
-    return (
+    return (  
       <div
-        className="bg-lion-cny bg-contain bg-center bg-no-repeat 
+        className="bg-lion-cny bg-contain bg-center bg-no-repeat
     m-auto 
     max-w-[226px] xs:min-w-[250px] sm:min-w-[430px] md:min-w-[600px]
+
+    3xl:bg-auto 3xl:pt-[40rem] 3xl:pb-[16rem]
+
     pt-[13.5rem] xs:pt-[14.5rem]  sm:pt-[19rem] md:pt-[22.5rem]
+   
+    
     pb-[3.5rem] sm:pb-[4rem] md:pb-[5rem]
     "
       >
@@ -56,7 +61,7 @@ function App() {
             src="/images/rc_logo.png"
             alt="cruise"
             className="m-auto 
-            w-1/2 xs:w-[60%] sm:w-1/2 md:w-[40%]"
+            w-1/2 xs:w-[60%] sm:w-1/2 md:w-[40%] 3xl:w-[70%]"
           />
           {/* container - text & button */}
           <div
@@ -71,6 +76,7 @@ function App() {
               xs:text-lg xs:leading-[1.5rem] xs:w-[80%] 
               sm:text-2xl sm:leading-[1.8rem] sm:w-[70%]
               md:text-3xl md:leading-[2.3rem] md:w-[60%]
+              3xl:text-5xl 3xl:w-[90%]
           "
             >
               Are you ready for an abundant new year filled with good luck?
@@ -83,6 +89,7 @@ function App() {
             px-4  sm:px-9
            
             sm:text-xl
+            3xl:text-5xl
           "
             >
               HUAT AH
