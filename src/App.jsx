@@ -34,63 +34,44 @@ function App() {
   // START
   if (!lionDance && !lionScroll) {
     console.log("start");
-    return (  
-      <div
-        className="bg-lion-cny bg-contain bg-center bg-no-repeat
-    m-auto 
-    max-w-[226px] xs:min-w-[250px] sm:min-w-[430px] md:min-w-[600px]
+    return (
+      <div className="relative">
+        <img
+          src="/images/lion-cny.webp"
+          alt="lion cny"
+          className="xs:h-[80vh] object-cover"
+        />
+        {/* cruise, text & button container */}
+        <div className="flex flex-col gap-8 absolute top-[50%] left-[18%] xs:w-2/3 w-full">
+          <div className=" relative">
+            <img className='w-[75%] mx-auto' src="/images/rc_logo.png" alt="cruise" />
+          </div>
 
-    3xl:bg-auto 3xl:pt-[40rem] 3xl:pb-[16rem]
-
-    pt-[13.5rem] xs:pt-[14.5rem]  sm:pt-[19rem] md:pt-[22.5rem]
-   
-    
-    pb-[3.5rem] sm:pb-[4rem] md:pb-[5rem]
-    "
-      >
-        {/* container - cruise image & text/button */}
-        <div
-          className="flex flex-col 
-        mx-auto
-        gap-7 xs:gap-6 sm:gap-10
-        w-[90%] xs:w-[70%]
-        "
-        >
-          {/* cruise image */}
-          <img
-            src="/images/rc_logo.png"
-            alt="cruise"
-            className="m-auto 
-            w-1/2 xs:w-[60%] sm:w-1/2 md:w-[40%] 3xl:w-[70%]"
-          />
-          {/* container - text & button */}
-          <div
-            className="flex flex-col 
-            gap-1 sm:gap-2
-            "
-          >
-            {/* text */}
+          {/* text & button container */}
+          <div className="flex flex-col gap-1 button1:gap-2">
             <p
-              className="text-white text-center mx-auto
-              w-[70%] leading-[1.2rem]
-              xs:text-lg xs:leading-[1.5rem] xs:w-[80%] 
-              sm:text-2xl sm:leading-[1.8rem] sm:w-[70%]
-              md:text-3xl md:leading-[2.3rem] md:w-[60%]
-              3xl:text-5xl 3xl:w-[90%]
-          "
+              className="text-white text-center  
+              
+               mx-auto
+                text-base leading-[1.3rem]
+                button0:text-lg button0:leading-[1.5rem]
+                button1:text-xl button1:leading-[1.6rem]
+                button1.1:text-2xl button1.1:leading-[1.8rem]
+                xs:text-xl xs:leading-[1.5rem]
+            "
             >
               Are you ready for an abundant new year filled with good luck?
             </p>
-            {/* button */}
             <button
               onClick={() => setLionDance(true)}
               className="shadow-xl rounded-full text-bold  text-white bg-[#0171B8] focus:outline-0 mx-auto
-            py-0 sm:py-1
-            px-4  sm:px-9
-           
-            sm:text-xl
-            3xl:text-5xl
-          "
+          text-base
+          button1:text-lg
+          button1.1:text-xl
+          xs:text-lg
+          py-0
+          px-6
+            "
             >
               HUAT AH
             </button>
@@ -108,8 +89,8 @@ function App() {
     return (
       <div className="bg-[#FFE5BF] mx-6">
         <img
-          className="xs:max-h-[80vh]"
-          src="/end_scene/end_scene.gif"
+          className="xs:h-[80vh] object-cover"
+          src="/end_scene/lion-scroll-loop-once.gif"
           alt="lion scroll"
         />
       </div>
@@ -122,7 +103,7 @@ function App() {
     return (
       <div className="bg-[#FFE5BF] mx-6">
         <LazyLoadImage
-          className="xs:max-h-[80vh]"
+          className="xs:h-[80vh] object-cover"
           src="/animation/lion_dance.webp"
           alt="lion dance"
         />

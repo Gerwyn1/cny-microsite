@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'lion-cny': "url('/images/lion-cny.webp')",
+        'lion-cny-2': "url('/images/lion-cny-2.webp')",
       }
     },
     screens: {
