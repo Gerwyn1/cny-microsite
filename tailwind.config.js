@@ -9,6 +9,8 @@ export default {
       backgroundImage: {
         'lion-cny': "url('/images/lion-cny.webp')",
         'lion-cny-2': "url('/images/lion-cny-2.webp')",
+        'lion-cny-3': "url('/images/full-with-text.webp')",
+        'clouds': "url('/animation/clouds.gif')",
       }
     },
     screens: {
