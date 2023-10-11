@@ -16,6 +16,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+
 }
 
 a {
@@ -34,6 +36,13 @@ body {
   /* min-width: 320px; */
   min-height: 100vh;
   background: #ffe5bf;
+
+ 
+
+}
+
+html {
+height:100%;
 }
 
 h1 {

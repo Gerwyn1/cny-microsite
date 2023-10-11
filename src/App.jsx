@@ -33,7 +33,7 @@ function App() {
     if (isInitialRender.current) {
       console.log("test interval");
       document.body.style.background =
-        "url('/animation/clouds.gif') center/cover no-repeat #FFE5BF";
+        "url('/animation/clouds.gif') center/contain no-repeat #FFE5BF";
       // after 5 sec, roll down scroll with number
       const timeoutId = setTimeout(() => {
         setLionScroll(true);
@@ -70,7 +70,7 @@ function App() {
               setCloud(true);
             }}
             className="absolute bottom-[11.5%] left-[25.5%]
-        w-[50%] h-[7%] object-contain cursor-pointer
+       w-[50%] h-[7%] object-contain cursor-pointer
         
         "
             src="/images/button-img.png"
@@ -87,11 +87,16 @@ function App() {
 
     // render gif scroll (gif)
     return (
-      <img
-        className="h-[80vh] object-cover"
-        src="/animation/lion-scroll-loop-once.gif"
-        alt="lion scroll"
-      />
+      <div className="relative">
+      <img 
+      className="absolute top-[4%] left-[30%] w-[38%]"
+      src='/images/rc_logo.png' alt='royal caribbean'/>
+        <LazyLoadImage
+          className="h-[80vh] object-contain"
+          src="/animation/lion-scroll-loop-once.gif"
+          alt="lion scroll"
+        />
+      </div>
     );
   }
 
