@@ -36,9 +36,6 @@ body {
   /* min-width: 320px; */
   min-height: 100vh;
   background: #ffe5bf;
-
- 
-
 }
 
 html {
@@ -81,3 +78,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/*
+
+.lion-end-scroll::before { 
+  position:absolute;
+  content:'';
+  background: url("/images/rc_logo.png") center/cover no-repeat;
+  top:40px;
+  left:40px;
+  width:400px;
+  height:100px;
+  object-fit:contain;
+  z-index:9999;
+  display:inline-block;
+}
+
+*/

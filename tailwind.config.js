@@ -6,6 +6,21 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes : {
+        easeIn: {
+          '0%': { opacity: '0' },
+          '10%': { opacity: '0' },
+          '20%': { opacity: '0' },
+          '30%': { opacity: '0' },
+          '45%': { opacity: '.3' },
+          '50%': { opacity: '.6' },
+          '60%': { opacity: '.7' },
+          '70%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'easeInImg': 'easeIn 2s linear',
+      },
       backgroundImage: {
         'lion-cny': "url('/images/lion-cny.webp')",
         'lion-cny-2': "url('/images/lion-cny-2.webp')",

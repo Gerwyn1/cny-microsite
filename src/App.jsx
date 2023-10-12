@@ -73,7 +73,7 @@ function App() {
        w-[50%] h-[7%] object-contain cursor-pointer
         
         "
-            src="/images/button-img.png"
+            src="/images/btn_huat.svg"
             alt="generate button"
           />
         </div>
@@ -87,15 +87,51 @@ function App() {
 
     // render gif scroll (gif)
     return (
-      <div className="relative">
-      <img 
-      className="absolute top-[4%] left-[30%] w-[38%]"
-      src='/images/rc_logo.png' alt='royal caribbean'/>
-        <LazyLoadImage
-          className="h-[80vh] object-contain"
-          src="/animation/lion-scroll-loop-once.gif"
-          alt="lion scroll"
-        />
+      <div className="flex justify-center items-center">
+        {/* lion-end-scroll */}
+        <div className="relative">
+          <LazyLoadImage
+            className="absolute top-[4%] left-[30%] w-[38%] object-contain"
+            src="/images/rc_logo.png"
+            alt="royal caribbean"
+          />
+          <LazyLoadImage
+            className="absolute top-[39.5%] left-[30%] w-[40%] z-[999] object-contain
+            animate-easeInImg
+            ease-in-out
+            "
+            src="/images/title.png"
+            alt="title"
+          />
+          <LazyLoadImage
+            className="absolute top-[50.5%] left-[21.5%] w-[57%] z-[999] 
+            object-contain
+            animate-easeInImg
+            "
+            src="/images/number_container.svg"
+            alt="number container"
+          />
+          <LazyLoadImage
+            className="absolute top-[82.5%] left-[23.5%] w-[25%] z-[999] object-contain"
+            src="/images/btn_save.svg"
+            alt="save"
+          />
+          <LazyLoadImage
+            className="absolute top-[82.5%] left-[51.5%] w-[25%] z-[999] object-contain"
+            src="/images/btn_again.svg"
+            alt="try again"
+          />
+          <LazyLoadImage
+            className="absolute top-[88.5%] left-[15%] w-[70%] z-[999] object-contain"
+            src="/images/instructions.svg"
+            alt="instructions"
+          />
+          <LazyLoadImage
+            className="h-[80vh] object-cover relative"
+            src="/animation/lion-scroll-loop-once.gif"
+            alt="lion scroll"
+          />
+        </div>
       </div>
     );
   }

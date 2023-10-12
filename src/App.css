@@ -43,22 +43,7 @@
   color: #888;
 }
 
-/* @layer components {
-  @media (min-width: 420px) {
-    .w-min-420 {
-      @apply text-3xl w-[14.0625rem] left-[19%] top-[60%] !important;
-    },
-    .w-min-420-button {
-      
-    }
-  }
-
-  @media (min-width: 420px) and (max-height: 600px) {
-    .h-min-420 {
-      @apply text-xl !important;
-    },
-    .h-min-420-button {
-      
-    }
-  }
-} */
+.fade-in {
+  transition: 0.4s ease-in;
+  opacity: 0;
+}
