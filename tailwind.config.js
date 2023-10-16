@@ -35,7 +35,7 @@ export default {
       'button2' : '360px',
       'button2.1' : '380px',
       'button3' : '400px',
-      'button3.1' : '420px',
+      'button3.1' : '425px',
       'button4' : '440px',
       'button4.1' : '460px',
       'button5' : '480px',

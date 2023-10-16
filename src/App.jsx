@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import useWindowSize from "react-use/lib/useWindowSize";
-import Confetti from "react-confetti";
 
 import "./App.css";
+import ConfettiCannon from "./ConfettiCannon";
 
 const randomDigit = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -83,7 +83,7 @@ function App() {
   if (lionDance) {
     return (
       <>
-        <div className="absolute left-0 top-0 right-0 bottom-0">
+        {/* <div className="absolute left-0 top-0 right-0 bottom-0">
           <Confetti
             width={width}
             height={height}
@@ -105,8 +105,11 @@ function App() {
               "#F5A00F",
             ]}
           />
+        </div> */}
+        {/*  */}
+        <div className="absolute bottom-[-25%] left-1/2 z-[9999] w-0 h-0">
+          <ConfettiCannon />
         </div>
-
         {lionScroll ? (
           <div className="flex justify-center items-center">
             {/* lion-end-scroll */}
@@ -158,38 +161,85 @@ function App() {
                 alt="lion scroll"
               />
               {/* digit images */}
-              <LazyLoadImage
-                className="object-cover absolute h-[8%] z-[999]
-              top-[57.5%] left-[25%] object-center
-              animate-easeInImg
+              {/* h-[4%] button0:h-[5%] button1.1:h-[6%] button2.1:h-[7%] button3.1:h-[8%] sm:h-[9%] */}
+              <div className="absolute top-[58%] left-[24%] right-[24%] flex z-[1000] h-[9%] gap-1">
+                <LazyLoadImage
+                  className="object-contain h-full w-full
+              animate-easeInImg m-auto
               "
-                src={number[0]}
-                alt="random digit"
-              />
-              <LazyLoadImage
-                className="object-cover absolute h-[8%] z-[999]
-              top-[57.5%] left-[38%] object-center
-              animate-easeInImg
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+                <LazyLoadImage
+                  className="object-contain h-full w-full
+              animate-easeInImg m-auto
               "
-                src={number[1]}
-                alt="random digit"
-              />
-              <LazyLoadImage
-                className="object-cover absolute h-[8%] z-[999]
-              top-[57.5%] left-[51%] object-center
-              animate-easeInImg
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+                <LazyLoadImage
+                  className="object-contain h-full w-full
+              animate-easeInImg m-auto
               "
-                src={number[2]}
-                alt="random digit"
-              />
-              <LazyLoadImage
-                className="object-cover absolute h-[8%] z-[999]
-              top-[57.5%] left-[65%] object-center
-              animate-easeInImg
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+                <LazyLoadImage
+                  className="object-contain h-full w-full
+              animate-easeInImg m-auto
               "
-                src={number[3]}
-                alt="random digit"
-              />
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+              </div>
+              {/* <div
+                className="absolute
+              top-[58.5%] left-[24%] z-[999] h-[9%] w-[12%]"
+              >
+                <LazyLoadImage
+                  className="object-cover h-full
+              animate-easeInImg m-auto
+              "
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+              </div>
+              <div
+                className="absolute
+                top-[58.5%] left-[37%] z-[999] h-[9%] w-[12%]"
+              >
+                <LazyLoadImage
+                  className="object-cover h-full
+              animate-easeInImg m-auto
+              "
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+              </div>
+              <div
+                className="absolute
+              top-[58.5%] left-[50%] z-[999] h-[9%] w-[12%]"
+              >
+                <LazyLoadImage
+                  className="object-cover h-full
+              animate-easeInImg m-auto
+              "
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+              </div>
+              <div
+                className="absolute
+              top-[58.5%] left-[64%] z-[999] h-[9%] w-[12%]"
+              >
+                <LazyLoadImage
+                  className="object-cover h-full
+              animate-easeInImg m-auto
+              "
+                  src={randomDigitImage()}
+                  alt="random digit"
+                />
+              </div> */}
             </div>
           </div>
         ) : (
