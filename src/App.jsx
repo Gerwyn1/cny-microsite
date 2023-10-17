@@ -1,27 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
-import useWindowSize from "react-use/lib/useWindowSize";
+import { useReward } from "react-rewards";
 
 import "./App.css";
-import ConfettiCannon from "./ConfettiCannon";
-
-import { useReward } from 'react-rewards';
 
 const randomDigit = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
-
-const randomDigitImage = (_) => `images/${randomDigit(0, 9)}.svg`;
+const randomDigitImage = () => `images/${randomDigit(0, 9)}.svg`;
 
 function App() {
-  const [lionDance, setLionDance] = useState(false);
   const [cloud, setCloud] = useState(false);
+  const [lionDance, setLionDance] = useState(false);
   const [lionScroll, setLionScroll] = useState(false);
   const [number, setNumber] = useState([]);
 
-  console.log(0.0655729166666667 * window.innerHeight)
-  
-  const {reward: confettiReward, isAnimating: isConfettiAnimating} = useReward('confettiReward', 'confetti', {
+  const { reward: confettiReward } = useReward("confettiReward", "confetti", {
     colors: [
       "#FEC504",
       "#DF5C3E",
@@ -32,37 +25,25 @@ function App() {
       "#FDCE40",
       "#F5A00F",
     ],
-    elementCount: 75,
+    elementCount: 100,
     elementSize: 0.0154166666666667 * window.innerHeight,
-    startVelocity: 0.0655729166666667 * window.innerHeight,
-    lifetime: window.innerWidth >= 2250 ? 250 : window.innerWidth >= 2500 ? (.1 * window.innerWidth) : 200,
-    // decay: .93,
+    startVelocity: 0.0855729166666667 * window.innerHeight,
+    lifetime: 1200,
   });
 
-// xxxxxxxxxxxxxxxxxx // 0.0655729166666667 * window.innerHeight
-
-  console.log("lion dance: ", lionDance);
-  console.log("cloud: ", cloud);
-  console.log("lion scroll: ", lionScroll);
-  console.log("number: ", number);
-
-  let { width, height } = useWindowSize();
 
   const isInitialRender = useRef();
 
-  // window.removeEventListener("resize", () => {});
-
-  // console.log(window.screen.width / 2)
-
-
   useEffect(() => {
     if (isInitialRender.current) {
+      console.log('re-render cloud')
       document.body.style.background = cloud
-        ? "url('animation/clouds.gif') center/contain no-repeat #FFE5BF"
+        ? "url('animation/clouds3.gif') center/contain no-repeat #FFE5BF"
         : "#FFE5BF";
       if (lionDance) {
-        confettiReward()
-        const timeoutId = setTimeout(() => {
+        const timeoutConfetti = setTimeout(() => confettiReward(), 1500);
+
+        const timeoutScroll = setTimeout(() => {
           setNumber([
             randomDigitImage(),
             randomDigitImage(),
@@ -71,7 +52,12 @@ function App() {
           ]);
           setLionScroll(true);
         }, 5000);
-        return () => clearInterval(timeoutId);
+
+        return () =>
+          clearInterval(() => {
+            timeoutConfetti();
+            timeoutScroll();
+          });
       }
     }
 
@@ -109,30 +95,6 @@ function App() {
   if (lionDance) {
     return (
       <>
-        {/* <div className="absolute left-0 top-0 right-0 bottom-0">
-          <Confetti
-            width={width}
-            height={height}
-            className="w-full h-full"
-            confettiSource={{ x: window.screen.width / 2, y: 0 }}
-            tweenDuration={60000}
-            numberOfPieces={400}
-            initialVelocityY={0}
-            gravity={0.2}
-            recycle={false}
-            colors={[
-              "#FEC504",
-              "#DF5C3E",
-              "#E67F5E",
-              "#F2750F",
-              "#DB4427",
-              "#FEDB6E",
-              "#FDCE40",
-              "#F5A00F",
-            ]}
-          />
-        </div> */}
-        {/* <ConfettiCannon /> */}
         <span id="confettiReward" className="fixed bottom-0 z-[10000]" />
         {lionScroll ? (
           <div className="flex justify-center items-center">
@@ -181,95 +143,46 @@ function App() {
               />
               <LazyLoadImage
                 className="h-screen object-cover relative"
-                src="animation/end_lion_noloop.gif"
+                src="animation/lion-scroll-loop-once3.gif"
                 alt="lion scroll"
               />
               {/* digit images */}
-              {/* h-[4%] button0:h-[5%] button1.1:h-[6%] button2.1:h-[7%] button3.1:h-[8%] sm:h-[9%] */}
               <div className="absolute top-[58%] left-[24%] right-[24%] flex z-[1000] h-[9%] gap-1">
                 <LazyLoadImage
                   className="object-contain h-full w-full
               animate-easeInImg m-auto
               "
-                  src={randomDigitImage()}
+                  src={number[0]}
                   alt="random digit"
                 />
                 <LazyLoadImage
                   className="object-contain h-full w-full
               animate-easeInImg m-auto
               "
-                  src={randomDigitImage()}
+                  src={number[1]}
                   alt="random digit"
                 />
                 <LazyLoadImage
                   className="object-contain h-full w-full
               animate-easeInImg m-auto
               "
-                  src={randomDigitImage()}
+                  src={number[2]}
                   alt="random digit"
                 />
                 <LazyLoadImage
                   className="object-contain h-full w-full
               animate-easeInImg m-auto
               "
-                  src={randomDigitImage()}
+                  src={number[3]}
                   alt="random digit"
                 />
               </div>
-              {/* <div
-                className="absolute
-              top-[58.5%] left-[24%] z-[999] h-[9%] w-[12%]"
-              >
-                <LazyLoadImage
-                  className="object-cover h-full
-              animate-easeInImg m-auto
-              "
-                  src={randomDigitImage()}
-                  alt="random digit"
-                />
-              </div>
-              <div
-                className="absolute
-                top-[58.5%] left-[37%] z-[999] h-[9%] w-[12%]"
-              >
-                <LazyLoadImage
-                  className="object-cover h-full
-              animate-easeInImg m-auto
-              "
-                  src={randomDigitImage()}
-                  alt="random digit"
-                />
-              </div>
-              <div
-                className="absolute
-              top-[58.5%] left-[50%] z-[999] h-[9%] w-[12%]"
-              >
-                <LazyLoadImage
-                  className="object-cover h-full
-              animate-easeInImg m-auto
-              "
-                  src={randomDigitImage()}
-                  alt="random digit"
-                />
-              </div>
-              <div
-                className="absolute
-              top-[58.5%] left-[64%] z-[999] h-[9%] w-[12%]"
-              >
-                <LazyLoadImage
-                  className="object-cover h-full
-              animate-easeInImg m-auto
-              "
-                  src={randomDigitImage()}
-                  alt="random digit"
-                />
-              </div> */}
             </div>
           </div>
         ) : (
           <LazyLoadImage
             className="h-[80vh] object-contain"
-            src="animation/animation.gif"
+            src="animation/lion_dance3.gif"
             alt="lion dance"
           />
         )}
