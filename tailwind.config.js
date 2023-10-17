@@ -29,17 +29,7 @@ export default {
       }
     },
     screens: {
-      'button0' : '300px',
-      'button1' : '320px',
-      'button1.1': '340px',
-      'button2' : '360px',
-      'button2.1' : '380px',
-      'button3' : '400px',
-      'button3.1' : '425px',
-      'button4' : '440px',
-      'button4.1' : '460px',
-      'button5' : '480px',
-      'button5.1' : '500px',
+      'xxs' : '300px',
       'xs' : '375px',
       'sm': '525px',
       'md': '768px',

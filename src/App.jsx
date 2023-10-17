@@ -31,12 +31,10 @@ function App() {
     lifetime: 1200,
   });
 
-
   const isInitialRender = useRef();
 
   useEffect(() => {
     if (isInitialRender.current) {
-      console.log('re-render cloud')
       document.body.style.background = cloud
         ? "url('animation/clouds3.gif') center/contain no-repeat #FFE5BF"
         : "#FFE5BF";
@@ -62,11 +60,10 @@ function App() {
     }
 
     isInitialRender.current = true;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lionDance, cloud]);
 
-  // START
   if (!lionDance && !lionScroll) {
-    console.log("start screen");
     return (
       <>
         <div className="m-4 relative">
@@ -98,28 +95,7 @@ function App() {
         <span id="confettiReward" className="fixed bottom-0 z-[10000]" />
         {lionScroll ? (
           <div className="flex justify-center items-center">
-            {/* lion-end-scroll */}
             <div className="relative">
-              <LazyLoadImage
-                className="absolute top-[4%] left-[30%] w-[38%] object-contain"
-                src="images/rc_logo.png"
-                alt="royal caribbean"
-              />
-              <LazyLoadImage
-                className="absolute top-[39.5%] left-[30%] w-[40%] z-[999] object-contain
-              animate-easeInImg
-              "
-                src="images/title.png"
-                alt="title"
-              />
-              <LazyLoadImage
-                className="absolute top-[50.5%] left-[21.5%] w-[57%] z-[999] 
-              object-contain
-              animate-easeInImg
-              "
-                src="images/number_container.svg"
-                alt="number container"
-              />
               <LazyLoadImage
                 className="absolute top-[82.5%] left-[23.5%] w-[25%] z-[999] object-contain cursor-pointer"
                 src="images/btn_save.svg"
@@ -137,40 +113,34 @@ function App() {
                 alt="try again"
               />
               <LazyLoadImage
-                className="absolute top-[88.5%] left-[15%] w-[70%] z-[999] object-contain"
-                src="images/instructions.svg"
-                alt="instructions"
-              />
-              <LazyLoadImage
                 className="h-screen object-cover relative"
-                src="animation/lion-scroll-loop-once3.gif"
+                src="animation/end_lion_once_compressed.gif"
                 alt="lion scroll"
               />
-              {/* digit images */}
-              <div className="absolute top-[58%] left-[24%] right-[24%] flex z-[1000] h-[9%] gap-1">
+              <div className="absolute top-[57%] left-[24%]  right-[24%] flex z-[1000] h-[8%] gap-1">
                 <LazyLoadImage
-                  className="object-contain h-full w-full
+                  className="h-full basis-1/4
               animate-easeInImg m-auto
               "
                   src={number[0]}
                   alt="random digit"
                 />
                 <LazyLoadImage
-                  className="object-contain h-full w-full
+                  className="h-full basis-1/4
               animate-easeInImg m-auto
               "
                   src={number[1]}
                   alt="random digit"
                 />
                 <LazyLoadImage
-                  className="object-contain h-full w-full
+                  className="h-full basis-1/4
               animate-easeInImg m-auto
               "
                   src={number[2]}
                   alt="random digit"
                 />
                 <LazyLoadImage
-                  className="object-contain h-full w-full
+                  className="h-full basis-1/4
               animate-easeInImg m-auto
               "
                   src={number[3]}
