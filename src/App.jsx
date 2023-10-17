@@ -6,6 +6,8 @@ import useWindowSize from "react-use/lib/useWindowSize";
 import "./App.css";
 import ConfettiCannon from "./ConfettiCannon";
 
+import { useReward } from 'react-rewards';
+
 const randomDigit = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -16,6 +18,28 @@ function App() {
   const [cloud, setCloud] = useState(false);
   const [lionScroll, setLionScroll] = useState(false);
   const [number, setNumber] = useState([]);
+
+  console.log(0.0655729166666667 * window.innerHeight)
+  
+  const {reward: confettiReward, isAnimating: isConfettiAnimating} = useReward('confettiReward', 'confetti', {
+    colors: [
+      "#FEC504",
+      "#DF5C3E",
+      "#E67F5E",
+      "#F2750F",
+      "#DB4427",
+      "#FEDB6E",
+      "#FDCE40",
+      "#F5A00F",
+    ],
+    elementCount: 75,
+    elementSize: 0.0154166666666667 * window.innerHeight,
+    startVelocity: 0.0655729166666667 * window.innerHeight,
+    lifetime: window.innerWidth >= 2250 ? 250 : window.innerWidth >= 2500 ? (.1 * window.innerWidth) : 200,
+    // decay: .93,
+  });
+
+// xxxxxxxxxxxxxxxxxx // 0.0655729166666667 * window.innerHeight
 
   console.log("lion dance: ", lionDance);
   console.log("cloud: ", cloud);
@@ -30,12 +54,14 @@ function App() {
 
   // console.log(window.screen.width / 2)
 
+
   useEffect(() => {
     if (isInitialRender.current) {
       document.body.style.background = cloud
         ? "url('animation/clouds.gif') center/contain no-repeat #FFE5BF"
         : "#FFE5BF";
       if (lionDance) {
+        confettiReward()
         const timeoutId = setTimeout(() => {
           setNumber([
             randomDigitImage(),
@@ -106,10 +132,8 @@ function App() {
             ]}
           />
         </div> */}
-        {/*  */}
-        <div className="absolute bottom-[-25%] left-1/2 z-[9999] w-0 h-0">
-          <ConfettiCannon />
-        </div>
+        {/* <ConfettiCannon /> */}
+        <span id="confettiReward" className="fixed bottom-0 z-[10000]" />
         {lionScroll ? (
           <div className="flex justify-center items-center">
             {/* lion-end-scroll */}
